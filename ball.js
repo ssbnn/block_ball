@@ -55,12 +55,12 @@ export class Ball {
             const min = Math.min(min1, min2);
 
             if(min == min1) {
-                this.vx *= -1;
+                this.vx *= -1.1;
                 this.x += this.vx;
                 // block.maxX -= 50; // 블록이 닿을 경우 옆으로 밀고 싶음. 어케 하는지 고민해보자
             }
             else if (min == min2) {
-                this.vy *= -1;
+                this.vy *= -1.1;
                 this.y += this.vy;
             }
         }
