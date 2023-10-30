@@ -54,16 +54,32 @@ export class Ball {
             const min2 = Math.min(y1, y2);
             const min = Math.min(min1, min2);
 
-            if(min == min1) {
-                this.vx *= -1.1;
+            if(min == x2) {
+                this.vx *= -1.0;
                 this.x += this.vx;
-                // block.maxX -= 50; // 블록이 닿을 경우 옆으로 밀고 싶음. 어케 하는지 고민해보자
+                // block.width -= 5; // 블록이 닿을 경우 옆으로 밀고 싶음. 어케 하는지 고민해보자
+                block.x -= 5;
+                block.maxX -= 5;
             }
-            else if (min == min2) {
-                this.vy *= -1.1;
+            else if (min == x1){
+                this.vx *= -1.0;
+                this.x += this.vx;
+                block.x += 5;
+                block.maxX += 5;
+            }
+            else if (min == y2) {
+                this.vy *= -1.0;
                 this.y += this.vy;
+                block.y -= 5;
+                block.maxY -= 5;
+            }
+            else if(min == y1) {
+                this.vy *= -1;
+                this.y += this.vy;
+                block.y += 5;
+                block.maxY += 5;
+
             }
         }
-
     }
 }
